@@ -3,20 +3,42 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HeroDetailComponent } from './hero-detail.component';
-//import { HeroesComponent } from './mock-heroes';
+import { HeroesComponent } from './heroes.component';
+import { HeroService } from './hero.service';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+    {
+      path: '',
+      redirectTo: '/dashboard',
+      pathMatch: 'full'
+    },
+    {
+      path: 'heroes',
+      component: HeroesComponent
+    },
+    {
+      path: 'dashboard',
+      component: DashboardComponent
+    }
+  ])
   ],
-  providers: [],
+  providers: [ HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
