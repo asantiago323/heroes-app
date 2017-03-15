@@ -1,6 +1,7 @@
 # HeroesApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
+Just a simple project for me to learn the awesomness that is called Angular 2.
 
 ## Development server
 
